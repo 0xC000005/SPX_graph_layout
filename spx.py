@@ -421,7 +421,7 @@ def optimize(X_curr):
 		X_curr = res.reshape((n,2))
 
 		# print(res.x)
-		print "Iter:" + str(OUTER_NUM_ITERS - NUM_ITERS)
+		print("Iter:" + str(OUTER_NUM_ITERS - NUM_ITERS))
 		# print(X_curr)
 		plotGraphandStats(X_curr)
 
