@@ -36,10 +36,10 @@ OUTER_NUM_ITERS = 30
 if(len(sys.argv) >= 4):
 	OUTER_NUM_ITERS = int(sys.argv[3])
 
-print THIS_GD_OPTION
-print THIS_NUM_ITERS
-print OUTER_NUM_ITERS
-print THIS_ALPHA
+print(THIS_GD_OPTION)
+print(THIS_NUM_ITERS)
+print(OUTER_NUM_ITERS)
+print(THIS_ALPHA)
 
 USE_NEATO_INITIAL = True
 USE_INITIAL_NODE_COORDS = False
@@ -88,7 +88,7 @@ def plotGraphandStats(X):
 	num_intersections = 0
 	min_angle = math.pi/2.0
 
-	print "Number of edges: ", m
+	print("Number of edges: ", m)
 
 	# loop through all edge pairs
 	for i in range(0,m):
@@ -115,10 +115,11 @@ def plotGraphandStats(X):
 
 				num_intersections += 1
 
-	print "Number of Edge Crossings: ", num_intersections
-	print "Minimum Angle: ", to_deg(min_angle)
+	print("Number of Edge Crossings: ", num_intersections)
+	print("Minimum Angle: ", to_deg(min_angle))
 
-	# plt.show()
+
+# plt.show()
 
 
 # This function computes the stress of an embedding. It takes as input the coordinates X, 
