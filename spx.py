@@ -209,7 +209,7 @@ def dStressMaj_dx(X, weights, distances, n, L, diag_1s, col1s_mat):
 # FILENAME = 'meeting_08_21_2018/input/input1'
 FILENAME = 'input18/input4'
 
-print FILENAME
+print(FILENAME)
 
 G = build_networkx_graph(FILENAME + '.txt')
 
