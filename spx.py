@@ -47,11 +47,14 @@ USE_INITIAL_NODE_COORDS = False
 OPTIMIZE_CROSSING_ANGLE = True
 
 #This function returns the nodes of an edge given its index in the edge list
-def getNodesforEdge(index):
-	print(f"Index: {index}")
-	print(f"Edge List: {edge_list}")
-	print(f"Edge at Index: {edge_list[index]}")
-	return edge_list[index][0], edge_list[index][1]
+def getNodesforEdge(i):
+	return G.edges()[i][0], G.edges()[i][1]
+
+# def getNodesforEdge(index):
+# 	print(f"Index: {index}")
+# 	print(f"Edge List: {edge_list}")
+# 	print(f"Edge at Index: {edge_list[index]}")
+# 	return edge_list[index][0], edge_list[index][1]
 
 
 # This function extracts the edge pair in the form of matrices 
