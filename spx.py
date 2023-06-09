@@ -48,9 +48,9 @@ OPTIMIZE_CROSSING_ANGLE = True
 
 #This function returns the nodes of an edge given its index in the edge list
 def getNodesforEdge(index):
-	print(f"Index: {index}")
-	print(f"Edge List: {edge_list}")
-	print(f"Edge at Index: {edge_list[index]}")
+	# print(f"Index: {index}")
+	# print(f"Edge List: {edge_list}")
+	# print(f"Edge at Index: {edge_list[index]}")
 	return edge_list[index][0], edge_list[index][1]
 
 
