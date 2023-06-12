@@ -322,6 +322,7 @@ def sum_penalty(X):
 	return sumPenalty
 
 
+
 def optimize(X_curr):
 	# Start with pivotmds or neato stress majorization or cmdscale as in the paper
 	# Or use X with a random initialization
