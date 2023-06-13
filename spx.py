@@ -32,7 +32,8 @@ THIS_NUM_ITERS = 100
 if(len(sys.argv) >= 3):
 	THIS_NUM_ITERS = int(sys.argv[2])
 
-OUTER_NUM_ITERS = 30
+# OUTER_NUM_ITERS = 30
+OUTER_NUM_ITERS = 10
 if(len(sys.argv) >= 4):
 	OUTER_NUM_ITERS = int(sys.argv[3])
 
@@ -764,7 +765,7 @@ def minimize_with_adam(X, num_iters=100, beta1 = 0.9, beta2 = 0.999, alpha = 1e-
 
 X_curr = optimize(X_curr)
 plotGraphandStats(X_curr)
-
+print(X_curr)
 
 
 
