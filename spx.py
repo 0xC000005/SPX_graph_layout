@@ -32,8 +32,7 @@ THIS_NUM_ITERS = 100
 if(len(sys.argv) >= 3):
 	THIS_NUM_ITERS = int(sys.argv[2])
 
-# OUTER_NUM_ITERS = 30
-OUTER_NUM_ITERS = 10
+OUTER_NUM_ITERS = 30
 if(len(sys.argv) >= 4):
 	OUTER_NUM_ITERS = int(sys.argv[3])
 
@@ -210,15 +209,22 @@ def dStressMaj_dx(X, weights, distances, n, L, diag_1s, col1s_mat):
 # G = nx.complete_graph(7)
 # G = nx.wheel_graph(9)
 
-# FILENAME = 'meeting_08_21_2018/input/input1'
-FILENAME = 'input18/input4'
+# # FILENAME = 'meeting_08_21_2018/input/input1'
+# FILENAME = 'input18/input4'
+#
+# print(FILENAME)
+#
+# G = build_networkx_graph(FILENAME + '.txt')
 
-print(FILENAME)
+import pandas as pd
 
-G = build_networkx_graph(FILENAME + '.txt')
+df = pd.read_csv('../netviz/sample_graphs/dolphins-edges.csv')
+df['~from'] = df['~from'].str.replace('n', '')
+df['~to'] = df['~to'].str.replace('n', '')
+G = nx.from_pandas_edgelist(df, source='~from', target='~to', create_using=nx.Graph())
 
 # TODO: Get the position in the input file
-dummy1, init_node_coords, dummy2 = take_input(FILENAME + '.txt')
+# dummy1, init_node_coords, dummy2 = take_input(FILENAME + '.txt')
 
 n = G.number_of_nodes()
 m = G.number_of_edges()
