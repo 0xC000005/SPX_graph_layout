@@ -222,6 +222,8 @@ df = pd.read_csv('../netviz/sample_graphs/dolphins-edges.csv')
 df['~from'] = df['~from'].str.replace('n', '')
 df['~to'] = df['~to'].str.replace('n', '')
 G = nx.from_pandas_edgelist(df, source='~from', target='~to', create_using=nx.Graph())
+print(G.nodes())
+print(G.edges())
 
 # TODO: Get the position in the input file
 # dummy1, init_node_coords, dummy2 = take_input(FILENAME + '.txt')
