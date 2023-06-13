@@ -32,7 +32,7 @@ THIS_NUM_ITERS = 100
 if(len(sys.argv) >= 3):
 	THIS_NUM_ITERS = int(sys.argv[2])
 
-OUTER_NUM_ITERS = 30*10
+OUTER_NUM_ITERS = 30
 if(len(sys.argv) >= 4):
 	OUTER_NUM_ITERS = int(sys.argv[3])
 
@@ -778,7 +778,7 @@ plotGraphandStats(X_curr)
 print(X_curr)
 
 import matplotlib.pyplot as plt
-
+import pygraphviz as pgv
 
 def plot_graph(G, X_curr):
 	# Create a dictionary that maps node indices to coordinates
@@ -789,6 +789,18 @@ def plot_graph(G, X_curr):
 
 	# save the graph
 	plt.savefig('graph.png')
+
+	# Assign positions to nodes
+	for node, pos in G.items():
+		G.nodes[node]['x'] = str(pos[0])
+		G.nodes[node]['y'] = str(pos[1])
+
+	# remove pos attribute
+	for node in G.nodes:
+		G.nodes[node].pop('pos', None)
+
+	# Write the DOT file
+	write_dot(G, "graph.dot")
 
 plot_graph(G, X_curr)
 
