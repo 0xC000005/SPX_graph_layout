@@ -238,12 +238,11 @@ distances = nx.floyd_warshall(G)
 X_curr = np.random.rand(n,2)*100 - 50
 
 if USE_NEATO_INITIAL:
-	# pos = nx.nx_agraph.graphviz_layout(G)
-	pos = nx.nx_agraph.graphviz_layout(G, args = '-Gstart=rand')
-	# Copy the coordinates from pos to X_curr
-	for i in range(0,n):
-		X_curr[i] = pos[i]
-	# np.save("neato_layout_input1_2017.npy" ,X_curr)
+    pos = nx.nx_agraph.graphviz_layout(G, args = '-Gstart=rand')
+    # Copy the coordinates from pos to X_curr
+    for node in G.nodes():
+        X_curr[node] = pos[node]
+
 
 if USE_INITIAL_NODE_COORDS:
 	# Copy the coordinates from initial coords to X_curr
