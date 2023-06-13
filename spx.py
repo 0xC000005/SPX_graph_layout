@@ -241,7 +241,7 @@ if USE_NEATO_INITIAL:
     pos = nx.nx_agraph.graphviz_layout(G, args = '-Gstart=rand')
     # Copy the coordinates from pos to X_curr
     for node in G.nodes():
-        X_curr[node] = pos[node]
+        X_curr[int(node)] = pos[node]
 
 
 if USE_INITIAL_NODE_COORDS:
