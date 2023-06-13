@@ -239,9 +239,14 @@ X_curr = np.random.rand(n,2)*100 - 50
 
 if USE_NEATO_INITIAL:
     pos = nx.nx_agraph.graphviz_layout(G, args = '-Gstart=rand')
+
+    # Create a mapping from nodes (strings) to integers
+    node_to_int = {node: i for i, node in enumerate(G.nodes())}
+
     # Copy the coordinates from pos to X_curr
     for node in G.nodes():
-        X_curr[int(node)] = pos[node]
+        X_curr[node_to_int[node]] = pos[node]
+
 
 
 if USE_INITIAL_NODE_COORDS:
