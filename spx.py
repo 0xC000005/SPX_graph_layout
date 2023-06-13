@@ -767,9 +767,20 @@ X_curr = optimize(X_curr)
 plotGraphandStats(X_curr)
 print(X_curr)
 
+import matplotlib.pyplot as plt
 
 
+def plot_graph(G, X_curr):
+	# Create a dictionary that maps node indices to coordinates
+	pos = {i: X_curr[i] for i in range(X_curr.shape[0])}
 
+	# Draw the graph using the positions in the pos dictionary
+	nx.draw(G, pos, with_labels=True)
+
+	# save the graph
+	plt.savefig('graph.png')
+
+plot_graph(G, X_curr)
 
 
 
