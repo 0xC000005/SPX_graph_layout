@@ -220,7 +220,10 @@ import pandas as pd
 
 df = pd.read_csv('../netviz/sample_graphs/dolphins-edges.csv')
 df['~from'] = df['~from'].str.replace('n', '')
+# convert every element to int
+df['~from'] = df['~from'].astype(int)
 df['~to'] = df['~to'].str.replace('n', '')
+df['~to'] = df['~to'].astype(int)
 G = nx.from_pandas_edgelist(df, source='~from', target='~to', create_using=nx.Graph())
 print(G.nodes())
 print(G.edges())
@@ -239,14 +242,9 @@ X_curr = np.random.rand(n,2)*100 - 50
 
 if USE_NEATO_INITIAL:
     pos = nx.nx_agraph.graphviz_layout(G, args = '-Gstart=rand')
-
-    # Create a mapping from nodes (strings) to integers
-    node_to_int = {node: i for i, node in enumerate(G.nodes())}
-
     # Copy the coordinates from pos to X_curr
     for node in G.nodes():
-        X_curr[node_to_int[node]] = pos[node]
-
+        X_curr[node] = pos[node]
 
 
 if USE_INITIAL_NODE_COORDS:
