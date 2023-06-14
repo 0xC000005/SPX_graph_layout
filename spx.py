@@ -795,7 +795,7 @@ def plot_graph(G, X_curr):
 
 	# display all the nodes and edges from networkx graph G
 	print("nodes: " + str(G.nodes()))
-	print("edges: " + G.edges())
+	print("edges: " + str(G.edges()))
 
 
 plot_graph(G, X_curr)
