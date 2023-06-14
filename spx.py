@@ -8,6 +8,11 @@ from edge_crossing import *
 import math
 from input_functions import *
 import sys
+import time
+
+# start timing
+start_time = time.time()
+
 
 EPSILON = 0.000001
 # K = 100000
@@ -32,7 +37,7 @@ THIS_NUM_ITERS = 100
 if(len(sys.argv) >= 3):
 	THIS_NUM_ITERS = int(sys.argv[2])
 
-OUTER_NUM_ITERS = 2
+OUTER_NUM_ITERS = 30
 if(len(sys.argv) >= 4):
 	OUTER_NUM_ITERS = int(sys.argv[3])
 
@@ -818,9 +823,15 @@ def create_dot_file(X_curr, nodes, edges, filename):
     # Write the graph to a DOT file
     G.write(filename)
 
+# end timing
+end_time = time.time()
+
 create_dot_file(X_curr, G.nodes(), G.edges(), 'graph.dot')
 
 
+# log the time into a txt file
+with open('time.txt', 'a') as f:
+	f.write("Time taken: " + str(end_time - start_time) + "\n")
 
 
 
