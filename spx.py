@@ -779,6 +779,9 @@ print(X_curr)
 
 import matplotlib.pyplot as plt
 import pygraphviz as pgv
+import pygraphviz as pgv
+from networkx.drawing.nx_agraph import write_dot
+
 
 def plot_graph(G, X_curr):
 	# Create a dictionary that maps node indices to coordinates
@@ -789,18 +792,6 @@ def plot_graph(G, X_curr):
 
 	# save the graph
 	plt.savefig('graph.png')
-
-	# Assign positions to nodes
-	for node, pos in G.items():
-		G.nodes[node]['x'] = str(pos[0])
-		G.nodes[node]['y'] = str(pos[1])
-
-	# remove pos attribute
-	for node in G.nodes:
-		G.nodes[node].pop('pos', None)
-
-	# Write the DOT file
-	write_dot(G, "graph.dot")
 
 plot_graph(G, X_curr)
 
