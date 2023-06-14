@@ -800,6 +800,25 @@ def plot_graph(G, X_curr):
 
 plot_graph(G, X_curr)
 
+import pygraphviz as pgv
+import numpy as np
+
+def create_dot_file(X_curr, nodes, edges, filename):
+    # Create a new graph
+    G = pgv.AGraph(directed=False)
+
+    # Add nodes to the graph with properties
+    for i, node in enumerate(nodes):
+        G.add_node(node, x=str(coord_data[i, 0]), y=str(coord_data[i, 1]))
+
+    # Add edges to the graph
+    for edge in edges:
+        G.add_edge(*edge)
+
+    # Write the graph to a DOT file
+    G.write(filename)
+
+create_dot_file(X_curr, G.nodes(), G.edges(), 'graph.dot')
 
 
 
