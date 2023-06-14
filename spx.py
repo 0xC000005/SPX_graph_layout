@@ -793,6 +793,11 @@ def plot_graph(G, X_curr):
 	# save the graph
 	plt.savefig('graph.png')
 
+	# display all the nodes and edges from networkx graph G
+	print("nodes: " + str(G.nodes()))
+	print("edges: " + G.edges())
+
+
 plot_graph(G, X_curr)
 
 
