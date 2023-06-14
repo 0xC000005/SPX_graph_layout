@@ -809,7 +809,7 @@ def create_dot_file(X_curr, nodes, edges, filename):
 
     # Add nodes to the graph with properties
     for i, node in enumerate(nodes):
-        G.add_node(node, x=str(coord_data[i, 0]), y=str(coord_data[i, 1]))
+        G.add_node(node, x=str(X_curr[i, 0]), y=str(X_curr[i, 1]))
 
     # Add edges to the graph
     for edge in edges:
