@@ -32,7 +32,7 @@ THIS_NUM_ITERS = 100
 if(len(sys.argv) >= 3):
 	THIS_NUM_ITERS = int(sys.argv[2])
 
-OUTER_NUM_ITERS = 10
+OUTER_NUM_ITERS = 2
 if(len(sys.argv) >= 4):
 	OUTER_NUM_ITERS = int(sys.argv[3])
 
@@ -803,6 +803,8 @@ def plot_graph(G, X_curr):
 	write_dot(G, "graph.dot")
 
 plot_graph(G, X_curr)
+
+
 
 
 
