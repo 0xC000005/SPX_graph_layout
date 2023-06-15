@@ -223,7 +223,7 @@ def dStressMaj_dx(X, weights, distances, n, L, diag_1s, col1s_mat):
 
 import pandas as pd
 
-df = pd.read_csv('../netviz/sample_graphs/dolphins-edges.csv')
+df = pd.read_csv('../netviz/sample_graphs/polblogs-edges.csv ')
 df['~from'] = df['~from'].str.replace('n', '')
 # convert every element to int
 df['~from'] = df['~from'].astype(int)
